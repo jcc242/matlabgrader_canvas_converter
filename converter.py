@@ -16,7 +16,6 @@ def main(argv):
         print(helpstring)
         sys.exit(2)
     for opt, arg in opts:
-        print("Opt: {} ARG: {}".format(opt, arg))
         if opt == '-h':
             print(helpstring)
             sys.exit()
@@ -24,8 +23,6 @@ def main(argv):
             inputfile = arg
         elif opt in ("-o","--ofile"):
             outputfile = arg
-    print ('Input file is: {}'.format(inputfile))
-    print ('Input file is: {}'.format(outputfile))
     if(not inputfile) or (not outputfile):
         print("Need an input file and an output file")
         sys.exit(2)
@@ -44,8 +41,8 @@ def main(argv):
         # assignments += [organize.create_assignment_from_csv(data)]
         # students += [organize.read_csv_to_students(data)]
 
-    keep_columns = [0,4,5,7,9,10,13,15]
-    prob_id_column_before_filter = 10
+    keep_columns = [1,5,6,8,10,11,14,16]
+    prob_id_column_before_filter = 11
     prob_id_column_after_filter = 5
 
     filtered = organize.filter_info(data, keep_columns)
