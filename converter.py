@@ -11,7 +11,7 @@ def main(argv):
     helpstring = 'convert.py -i <inputfile> -o <outputfile>'
 
     try:
-        opts, args = getopt.getopt(argv,"hi:o",["ifile=","ofile="])
+        opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
     except getopt.GetoptError:
         print(helpstring)
         sys.exit(2)
