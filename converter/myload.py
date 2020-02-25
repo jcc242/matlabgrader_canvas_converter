@@ -7,9 +7,18 @@ def load_file(filename):
         return f
 
 def parse_csv(filehandle):
-    reader = csv.reader(filehandle)
+    reader = csv.reader(filehandle, delimiter=',')
     next(reader)
     return [row for row in reader]
+
+def csv_headers(filehandle):
+    reader = csv.reader(filehandle)
+    header = next(reader)
+    return header
+
+def column_index(columnHeader, key):
+    assert key in columnHeader, "Key not found in csv header"
+    return columnHeader.index(key)
 
 def get_csv_files(path):
     print("path: {}".format(path))
